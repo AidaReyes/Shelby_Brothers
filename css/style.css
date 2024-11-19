@@ -1,0 +1,686 @@
+:root {
+        --fuentePrincipal: "Montserrat", sans-serif;
+        --textoNegrita: 900;
+        --textoNormal: 400;
+        --textoThin: 100;
+    
+        --colorPrincipsl: #49495a;
+        --colorTitulo: #403ccf;
+    
+        --bgPrincipal: #fbfaff;
+        --bgSecundario: #eae8f3;
+        --bgBannerPrincipal: #ede0ea;
+        --bgBannerSecundario: #ebdefe;
+        --bgBtnPrincipal: #2623b1;
+}
+
+body {
+    font-family: var(--fuentePrincipal);
+
+}
+/** bloque header **/
+
+.bloqueHeader {
+    display: flex; 
+    height: 700px;
+    background-color: #1ea82c;
+}
+
+.bloqueHeader_contenedor_imagen {
+    width: 100%;
+}
+
+.imagenheader {
+    height: 100%;
+    width: 200%;
+}
+
+.bloqueHeader_contenedorInfo {
+    background-color: #ffffff;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+.bloqueHeader_contenedorInfoTitulo {
+    color: var(--colorTitulo);
+    font-size: 4rem;
+    font-weight: var(--textoNegrita);
+}
+
+.bloqueHeader_contenedorInfoParrafo {
+    color: var(--colorPrincipsl);
+    font-size: 1.5rem;
+    font-weight: var(--textoNormal);
+}
+
+/* bloque quienes somos*/
+.bloquequienessomos {
+    display: flex; 
+    flex-direction: column; 
+    gap: 2rem; 
+    padding: 2rem;
+    background-color: var(--bgSecundario);
+    align-items: center; 
+    text-align: center;
+}
+
+.bloqueTitulo_principal {
+    width: 100%; 
+    text-align: left; /* Alinear el título principal a la izquierda */
+    color: var(--colorTitulo);
+    font-size: 3rem;
+    font-weight: var(--textoNegrita);
+}
+
+/* Contenedor de las columnas */
+.columnasInfo {
+    display: flex; /* Usamos flexbox para alinear los bloques en fila */
+    justify-content: space-between; /* Espaciado igual entre los bloques */
+    width: 100%; /* Ocupa todo el ancho */
+    gap: 2rem; /* Espaciado entre columnas */
+}
+
+/* Bloques de información individuales */
+.bloqueInfoTitulo,
+.bloqueInfoTitulo2,
+.bloqueInfoTitulo3 {
+    flex: 1; /* Los bloques ocupan el mismo tamaño */
+    background-color: var(--bgPrincipal);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos y texto en los bloques de información */
+.bloqueInfoTitulo h2,
+.bloqueInfoTitulo2 h3,
+.bloqueInfoTitulo3 h4 {
+    color: var(--colorTitulo);
+    font-size: 1.5rem;
+    font-weight: var(--textoNegrita);
+    margin-bottom: 0.5rem;
+}
+
+/* Párrafos con texto justificado */
+.bloqueInfoTitulo p,
+.bloqueInfoTitulo2 p,
+.bloqueInfoTitulo3 p {
+    color: var(--colorPrincipal);
+    font-size: 1rem;
+    font-weight: var(--textoNormal);
+    line-height: 1.5;
+    text-align: justify; /* Texto justificado */
+}
+
+/* Bloque Menu */
+/** Estilo general de la sección **/
+.bloqueMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Espaciado entre el título y el contenido */
+    padding: 2rem;
+    background-color: var(--bgSecundario);
+}
+
+/* Estilo del título */
+.bloqueMenu_titulo h1 {
+    font-size: 2.5rem;
+    font-weight: var(--textoNegrita);
+    color: var(--colorTitulo);
+    text-align: left; /* Alineado a la izquierda */
+}
+
+/* Contenedor principal del contenido */
+.bloqueMenu_contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2 partes para los textos, 1 para la imagen */
+    gap: 2rem; /* Espaciado entre columnas */
+    align-items: start;
+}
+
+/** Contenedor de los bloques de texto con diseño en dos filas **/
+.bloqueMenu_textos {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas para los bloques superiores */
+    gap: 1.5rem; /* Espaciado entre los bloques */
+}
+
+/* Bloques de texto individuales */
+.bloqueTexto {
+    background-color: var(--bgPrincipal);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Bloque completo (tercer bloque) */
+.bloqueTexto_full {
+    grid-column: 1 / -1; /* Hace que ocupe las dos columnas */
+}
+
+
+/* Estilo de los títulos en los bloques de texto */
+.bloqueTexto h2 {
+    font-size: 1.5rem;
+    font-weight: var(--textoNegrita);
+    color: var(--colorTitulo);
+    margin-bottom: 0.5rem;
+}
+
+/* Estilo de los párrafos en los bloques de texto */
+.bloqueTexto p {
+    font-size: 1rem;
+    font-weight: var(--textoNormal);
+    color: var(--colorPrincipsl);
+    text-align: justify; /* Texto justificado */
+    line-height: 1.6;
+}
+
+/* Imagen */
+.bloqueMenu_imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Diseño responsivo: Pantallas pequeñas */
+@media (max-width: 768px) {
+    .bloqueMenu_contenido {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+
+    .bloqueMenu_textos {
+        grid-template-columns: 1fr; /* Bloques en una sola columna */
+    }
+}
+
+
+
+/*Secccion de ambiente*/
+/** Sección general **/
+.bloqueAmbiente {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--bgSecundario);
+}
+
+/* Título */
+.bloqueAmbiente_titulo h1 {
+    font-size: 2.5rem;
+    font-weight: var(--textoNegrita);
+    color: var(--colorTitulo);
+    text-align: left;
+}
+
+/* Contenedor principal */
+.bloqueAmbiente_contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2 partes para texto, 1 para imagen */
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Contenedor de los bloques de texto */
+.bloqueAmbiente_textos {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 1.5rem; /* Espaciado entre columnas y filas */
+}
+
+/* Bloques individuales */
+.bloqueTexto {
+    background-color: var(--bgPrincipal);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem; /* Espaciado interno */
+}
+
+/* Estilo de los íconos */
+.bloqueTexto i {
+    font-size: 2rem; /* Tamaño del ícono */
+    color: var(--colorTitulo);
+}
+
+/* Títulos de los bloques */
+.bloqueTexto h2 {
+    font-size: 1.25rem;
+    font-weight: var(--textoNegrita);
+    color: var(--colorTitulo);
+    margin: 0;
+}
+
+/* Párrafos de los bloques */
+.bloqueTexto p {
+    font-size: 1rem;
+    font-weight: var(--textoNormal);
+    color: var(--colorPrincipsl);
+    text-align: justify;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Imagen */
+.bloqueAmbiente_imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .bloqueAmbiente_contenido {
+        grid-template-columns: 1fr; /* Imagen y texto en una sola columna */
+    }
+    .bloqueAmbiente_textos {
+        grid-template-columns: 1fr; /* Bloques en una sola columna */
+    }
+}
+
+/*seccion ubicacion y horarios*/
+.ubicacion-horarios {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #f8eaf4;
+    position: relative;
+}
+
+/* Icono central (marcador) */
+.icono-mapa {
+    font-size: 3rem;
+    color: #6b4fa1;
+    background-color: #f0d3e7;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+.ubicacion-horarios h1 {
+    color: #403ccf;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Contenedor de columnas */
+.contenedor-informacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+/* Columnas */
+.columna {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+}
+
+/* Números */
+.numero {
+    background-color: #f0d3e7;
+    color: #403ccf;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 auto;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos de las columnas */
+.columna h2 {
+    color: #403ccf;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Textos */
+.columna p {
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    .contenedor-informacion {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .columna {
+        width: 90%;
+        margin-bottom: 1.5rem;
+    }
+}
+
+
+
+/* Promociones */
+
+
+/* Beneficios */
+/* Variables de estilo */
+:root {
+    --color-fondo: #f9f9f9;
+    --color-titulo: #2b3e8e;
+    --color-texto: #333;
+    --color-bloque: #fff;
+    --sombra-bloque: rgba(0, 0, 0, 0.1);
+    --radio-bordes: 8px;
+    --espaciado: 1.5rem;
+    --fuente-titulo: 700;
+    --fuente-texto: 400;
+}
+
+/* Contenedor principal */
+.beneficios-clientes {
+    padding: 2rem;
+    background-color: var(--color-fondo);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Título */
+.titulo-beneficios h1 {
+    font-size: 2.5rem;
+    font-weight: var(--fuente-titulo);
+    color: var(--color-titulo);
+    margin: 0;
+    text-align: left;
+}
+
+/* Contenedor principal del contenido */
+.contenido-beneficios {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2 partes para los textos, 1 para la imagen */
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Bloques de texto */
+.bloques-texto {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas para los primeros bloques */
+    gap: 1rem;
+}
+
+.bloque-texto {
+    background-color: var(--color-bloque);
+    padding: 1.2rem;
+    border-radius: var(--radio-bordes);
+    box-shadow: 0 4px 8px var(--sombra-bloque);
+}
+
+.bloque-texto-grande {
+    grid-column: 1 / -1; /* Ocupa toda la fila */
+    background-color: var(--color-bloque);
+    padding: 1.2rem;
+    border-radius: var(--radio-bordes);
+    box-shadow: 0 4px 8px var(--sombra-bloque);
+}
+
+/* Títulos de los bloques */
+.bloque-texto h2,
+.bloque-texto-grande h2 {
+    font-size: 1.5rem;
+    font-weight: var(--fuente-titulo);
+    color: var(--color-titulo);
+    margin-bottom: 0.5rem;
+}
+
+/* Texto de los bloques */
+.bloque-texto p,
+.bloque-texto-grande p {
+    font-size: 1rem;
+    font-weight: var(--fuente-texto);
+    color: var(--color-texto);
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Imagen */
+.imagen-beneficios img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radio-bordes);
+    box-shadow: 0 4px 8px var(--sombra-bloque);
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenido-beneficios {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+    }
+
+    .bloques-texto {
+        grid-template-columns: 1fr; /* Bloques en una sola columna */
+    }
+}
+
+
+
+
+/*Testimonios */
+.testimonios {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.testimonios_titulo {
+    font-size: 2.5rem;
+    color: var(--colorTitulo);
+    margin-bottom: 3rem;
+}
+
+.testimonios_contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.testimonio {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: left;
+}
+
+.testimonio_cita {
+    font-size: 1.2rem;
+    color: var(--colorCita);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.testimonio_autor {
+    font-size: 1rem;
+    color: var(--colorAutor);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonio_texto {
+    font-size: 0.9rem;
+    color: var(--colorTexto);
+}
+
+
+
+
+/*Próximos pasos */
+:root {
+    --fuentePrincipal: "Montserrat", sans-serif;
+    --colorTitulo: #403ccf;
+    --colorTexto: #49495a;
+    --colorBoton: #2623b1;
+    --colorBotonHover: #1e1a9f;
+    --bgBoton: white;
+    --bgSeccion: #fbfaff;
+}
+
+body {
+    font-family: var(--fuentePrincipal);
+    margin: 0;
+    background-color: var(--bgSeccion);
+}
+
+.proximos-pasos {
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.proximos-pasos_contenedor {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.proximos-pasos_texto {
+    flex: 1;
+    text-align: left;
+}
+
+.proximos-pasos_titulo {
+    font-size: 2.5rem;
+    color: var(--colorTitulo);
+    margin-bottom: 1.5rem;
+}
+
+.proximos-pasos_botones {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--colorBoton);
+    color: var(--bgBoton);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--colorBotonHover);
+}
+
+.proximos-pasos_parrafo {
+    font-size: 1rem;
+    color: var(--colorTexto);
+    line-height: 1.5;
+}
+
+.proximos-pasos_imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.proximos-pasos_imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/*Contacto y Redes */
+.contacto-redes {
+    padding: 3rem 2rem;
+    background-color: #fbfaff;
+    text-align: center;
+}
+
+.contacto-redes_titulo {
+    font-size: 2.5rem;
+    color: #403ccf;
+    margin-bottom: 2rem;
+}
+
+.contacto-redes_contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contacto-redes_item {
+    background-color: #eae8f3;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    text-align: left;
+}
+
+.contacto-redes_item h3 {
+    font-size: 1.5rem;
+    color: #403ccf;
+    margin-bottom: 1rem;
+}
+
+.contacto-redes_item p {
+    font-size: 1rem;
+    color: #49495a;
+    margin: 0.5rem 0;
+}
+
+.contacto-redes_item a {
+    color: #2623b1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contacto-redes_item a:hover {
+    text-decoration: underline;
+}
